@@ -8,7 +8,7 @@ Download: https://www.vmware.com/br/products/workstation-pro/workstation-pro-eva
 ### Dentro da ferramenta, iremos execuatar os seguintes passos:
 
   - Importar a VM no VMware 
-  - Selecionar a opção "file"
+  - Selecionar a opção "File"
   - Export an OVF
   
 Esse processo irá gerar três arquivos com as extensões: .mf, .ovf e .vmdk.
@@ -27,6 +27,7 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
     Obs: Os arquivos estão disponiveis no repositorio. 
 
       #### Arquivo role-policy.json
+      ```json
       {
           "Version":"2012-10-17",
           "Statement":[
@@ -68,6 +69,7 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
              }
           ]
       }
+      ```
 
       #### Arquivo trust-policy.json
       {
