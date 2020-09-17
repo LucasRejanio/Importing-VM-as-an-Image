@@ -2,14 +2,14 @@
 Essa Documentação tem como foco realizar a importação de uma VM para seu ambiente de virtualização Amazon EC2. Importaremos com o padrão de Imagens Amazon (AMI), na qual permite que você execute instâncias baseadas.
 
 ## Exportando a VM para OVF 
-O primeiro passo a se fazer é exportar sua VM para o formato aceito pela AWS, nesse caso o OVF, para isso vamo precisar do software VMware. <\br>
+O primeiro passo a se fazer é exportar sua VM para o formato aceito pela AWS, nesse caso o OVF, para isso vamo precisar do software VMware. 
 Download: https://www.vmware.com/br/products/workstation-pro/workstation-pro-evaluation.html
 
 ### Dentro da ferramenta, iremos execuatar os seguintes passos:
 
   - Importar a VM no VMware 
   - Selecionar a opção "File"
-  - Export an OVF
+  - Export to OVF
   
 Esse processo irá gerar três arquivos com as extensões: .mf, .ovf e .vmdk.
 
@@ -108,7 +108,7 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
     Configuração: https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-configure.html
   
 ## Importar a VM
-Depois de tudo configurado, vamos executar os comandos via AWS cli para geração da AMI.
+Depois de tudo configurado, vamos executar os comandos via AWS cli para geração da AMI, passando o diretorio local dos nossos arquivos de configurações.
 
 ### Exemplo:
   ```
