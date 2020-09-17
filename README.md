@@ -2,7 +2,7 @@
 Essa Documentação tem como foco realizar a importação de uma VM para seu ambiente de virtualização Amazon EC2. Importaremos com o padrão de Imagens Amazon (AMI), na qual permite que você execute instâncias baseadas.
 
 ## Exportando a VM para OVF 
-O primeiro passo a se fazer é exportar sua VM para o formato aceito pela AWS, nesse caso o OVF, para isso vamo precisar do software VMware. 
+O primeiro passo a se fazer é exportar sua VM para o formato aceito pela AWS, nesse caso o OVF, para isso vamo precisar do software VMware. <\br>
 Download: https://www.vmware.com/br/products/workstation-pro/workstation-pro-evaluation.html
 
 ### Dentro da ferramenta, iremos execuatar os seguintes passos:
@@ -23,10 +23,10 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
 
   - Pegue os arquivos de exportação gerados e realize o Upload na pasta "vm". É importante deixar esses arquivos públicos também. 
 
-  - Crie três arquivos .json e adicione eles a um diretorio local, seguindo os modelos: <br/>
+  - Crie três arquivos de configuração .json e adicione eles a um diretorio local. Seguindo os modelos abaixo: <br/>
     Obs: Os arquivos estão disponiveis no repositorio. 
 
-      #### Arquivo role-policy.json
+      #### Arquivo: role-policy.json
       ```json
       {
           "Version":"2012-10-17",
@@ -71,7 +71,7 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
       }
       ```
 
-      #### Arquivo trust-policy.json
+      #### Arquivo: trust-policy.json
       ```json
       {
          "Version": "2012-10-17",
@@ -90,7 +90,7 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
       }
       ```
       
-      #### Arquivo containers.json
+      #### Arquivo: containers.json
       ```json
       [
           {
@@ -103,28 +103,25 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
           }
         ]
       ```
-  - Instale o AWS cli, você usará para executar os comandos de importação.
-    Download: https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-install.html 
+  - Instale o AWS cli, você usará para executar os comandos de importação. <br/>
+    Download: https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-install.html <br/>
     Configuração: https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-configure.html
   
 ## Importar a VM
 Depois de tudo configurado, vamos executar os comandos via AWS cli para geração da AMI.
 
 ### Exemplo:
-  ```json
-  - aws iam create-role --role-name vmimport --assume-role-policy-document "file://C:\Users\lucas\Documents\Projects\ImportVM\trust-policy.json"
-  - aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "file://C:\Users\lucas\Documents\Projects\ImportVM\role-policy.json"
-  - aws ec2 import-image --description "My server disk vm" --disk-containers "file://C:\Users\lucas\Documents\Projects\ImportVM\containers.json"
+  ```
+  aws iam create-role --role-name vmimport --assume-role-policy-document "file://C:\Users\lucas\Documents\Projects\ImportVM\trust-policy.json"
+  aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "file://C:\Users\lucas\Documents\Projects\ImportVM\role-policy.json"
+  aws ec2 import-image --description "My server disk vm" --disk-containers "file://C:\Users\lucas\Documents\Projects\ImportVM\containers.json"
   ```
   
-## Final
-É importante lembrar que o processo de geração da AMI é um pouco demorado, por tanto, aguarde algumas horas.
+## Conclusão
 
+- [x] Exportar VM para OVF
+- [x] Importar VM na AWS
+- [x] Gerar arquivos de configuração .json
+- [x] Executar comandos AWS cli
 
-  
-  
-  
-
-  
-
-    
+É importante lembrar que o processo de geração da AMI é um pouco demorado, por tanto, aguarde algumas horas até o final desse processo.
