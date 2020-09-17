@@ -23,7 +23,7 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
 
   - Pegue os arquivos de exportação gerados e realize o Upload na pasta "vm". É importante deixar esses arquivos públicos também. 
 
-  - Crie 3 arquivos .json e adicione eles a um diretorio local, seguindo os modelos:
+  - Crie três arquivos .json e adicione eles a um diretorio local, seguindo os modelos: <br/>
     Obs: Os arquivos estão disponiveis no repositorio. 
 
       #### Arquivo role-policy.json
@@ -72,6 +72,7 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
       ```
 
       #### Arquivo trust-policy.json
+      ```json
       {
          "Version": "2012-10-17",
          "Statement": [
@@ -87,8 +88,10 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
             }
          ]
       }
-
+      ```
+      
       #### Arquivo containers.json
+      ```json
       [
           {
             "Description": "First disk",
@@ -99,7 +102,7 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
             }
           }
         ]
-
+      ```
   - Instale o AWS cli, você usará para executar os comandos de importação.
     Download: https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-install.html 
     Configuração: https://docs.aws.amazon.com/pt_br/cli/latest/userguide/cli-chap-configure.html
@@ -108,10 +111,11 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
 Depois de tudo configurado, vamos executar os comandos via AWS cli para geração da AMI.
 
 ### Exemplo:
-
+  ```json
   - aws iam create-role --role-name vmimport --assume-role-policy-document "file://C:\Users\lucas\Documents\Projects\ImportVM\trust-policy.json"
   - aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "file://C:\Users\lucas\Documents\Projects\ImportVM\role-policy.json"
   - aws ec2 import-image --description "My server disk vm" --disk-containers "file://C:\Users\lucas\Documents\Projects\ImportVM\containers.json"
+  ```
   
 ## Final
 É importante lembrar que o processo de geração da AMI é um pouco demorado, por tanto, aguarde algumas horas.
