@@ -7,7 +7,6 @@ Download: https://www.vmware.com/br/products/workstation-pro/workstation-pro-eva
 
 ### Dentro da ferramenta, iremos execuatar os seguintes passos:
 
-  # Mardown
   - Importar a VM no VMware 
   - Selecionar a opção "file"
   - Export an OVF
@@ -19,7 +18,6 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
 
 ### Pré-requisitos
 
-  # Markdown
   - Crie um bucket do Amazon S3 para armazenar as imagens exportadas ou escolha um bucket existente. Selecione na região onde você deseja importar suas VMs. Dentro do S3 
     crie dois diretorios, um chamado "exported" e um chamado "vm". É importante deixar o S3 público. 
 
@@ -108,7 +106,7 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
 Depois de tudo configurado, vamos executar os comandos via AWS cli para geração da AMI.
 
 ### Exemplo:
-  # Markdown
+
   - aws iam create-role --role-name vmimport --assume-role-policy-document "file://C:\Users\lucas\Documents\Projects\ImportVM\trust-policy.json"
   - aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document "file://C:\Users\lucas\Documents\Projects\ImportVM\role-policy.json"
   - aws ec2 import-image --description "My server disk vm" --disk-containers "file://C:\Users\lucas\Documents\Projects\ImportVM\containers.json"
