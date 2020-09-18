@@ -19,9 +19,9 @@ Depois de exportar a VM do ambiente de virtualização, você pode importá-la p
 ### Pré-requisitos
 
   - Crie um bucket do Amazon S3 para armazenar as imagens exportadas ou escolha um bucket existente. Selecione na região onde você deseja importar suas VMs. Dentro do S3 
-    crie dois diretorios, um chamado "exported" e um chamado "vm". É importante deixar o S3 público. 
+    crie dois diretorios, um chamado "exported" e um chamado "vm". É necessário deixar o S3 público. 
 
-  - Pegue os arquivos de exportação gerados e realize o Upload na pasta "vm". É importante deixar esses arquivos públicos também. 
+  - Pegue os arquivos de exportação gerados e realize o Upload na pasta "vm". É necessário deixar esses arquivos públicos também. 
 
   - Crie três arquivos de configuração .json e adicione eles a um diretorio local. Seguindo os modelos abaixo: <br/>
     Obs: Os arquivos estão disponiveis no repositorio. 
