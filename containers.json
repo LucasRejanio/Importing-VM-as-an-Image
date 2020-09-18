@@ -1,0 +1,10 @@
+[
+    {
+      "Description": "First disk",
+      "Format": "vmdk",
+      "UserBucket": {
+          "S3Bucket": "b2bi-treinamento",
+          "S3Key": "vm/B2B_ReferenceEnvironment-Partner_20200218-disk1.vmdk"
+      }
+    }
+  ]
