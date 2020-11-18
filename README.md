@@ -1,4 +1,4 @@
-# Importing-VM-as-an-Image
+# Importing VM as an image
 Essa Documentação tem como foco realizar a importação de uma VM para seu ambiente de virtualização Amazon EC2. Importaremos com o padrão de Imagens Amazon (AMI), que permite que você execute instâncias baseadas.
 
 ## Overwiew 
