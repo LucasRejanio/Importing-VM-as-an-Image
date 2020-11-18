@@ -1,3 +1,5 @@
+![Test library workflow status](https://github.com/tcort/markdown-link-check/workflows/Test%20library/badge.svg)
+
 # Importing VM as an image
 Essa Documentação tem como foco realizar a importação de uma VM para seu ambiente de virtualização Amazon EC2. Importaremos com o padrão de Imagens Amazon (AMI), que permite que você execute instâncias baseadas.
 
