@@ -1,4 +1,4 @@
-![Test library workflow status](https://github.com/tcort/markdown-link-check/workflows/Test%20library/badge.svg)
+![AWS CodeBuild Badge](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiT3NmZUNFTHh6dTZYUExUMWhMNVNjc05TbHUxYXdaakd5Vk1iRUNmV0RMZ2pyajlZRWdqUmtHY3hvUmZUQTlLYXpISmFUa2dmVmEyYlhYcEZKcU1hdjNZPSIsIml2UGFyYW1ldGVyU3BlYyI6ImZKcDNpL3JJLzZtRnBRWUIiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 # Importing VM as an image
 Essa Documentação tem como foco realizar a importação de uma VM para seu ambiente de virtualização Amazon EC2. Importaremos com o padrão de Imagens Amazon (AMI), que permite que você execute instâncias baseadas.
